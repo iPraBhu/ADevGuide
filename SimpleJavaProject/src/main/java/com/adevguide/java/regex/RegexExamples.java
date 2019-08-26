@@ -6,7 +6,7 @@ package com.adevguide.java.regex;
 import java.util.regex.Pattern;
 
 /**
- * @author pbhuite
+ * @author PraBhu
  *
  */
 public class RegexExamples {

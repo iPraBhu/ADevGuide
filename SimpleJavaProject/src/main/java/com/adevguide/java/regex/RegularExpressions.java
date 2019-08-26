@@ -13,7 +13,7 @@ public class RegularExpressions {
 
 		String pattern = "(\\+\\d{2})(\\s)(\\d{10})"; // Java Regex to match +xx xxxxxxxxxx
 		String testCase = "+91 8308767656";
-		testCase.matches(pattern); // this will return true
+		System.out.println(testCase.matches(pattern)); // this will print true
 
 		String pattern1 = "(\\+\\d{2})(\\s)(\\d{10})";
 		String testCase1 = "+91 8308767656";
