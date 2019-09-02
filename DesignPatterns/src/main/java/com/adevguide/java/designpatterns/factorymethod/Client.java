@@ -10,16 +10,16 @@ public class Client {
     public static void main(String[] args) {
 
         try {
-            Stock appleStock = StockFactory.getStock(StockCompany.APPLE);
+            Stock appleStock = new AppleFactory().getStock();
             appleStock.buyShares(10);
-            appleStock.exchangeInfo();
-            
-            Stock amazonStock = StockFactory.getStock(StockCompany.AMAZON);
-            amazonStock.sellShares(20);
-            amazonStock.exchangeInfo();
 
-            Stock microsoftStock = StockFactory.getStock(StockCompany.MICROSOFT);
-            microsoftStock.buyShares(10);
+            System.out.println("********************************");
+            Stock amazonStock = new AmazonFactory().getStock();
+            amazonStock.sellShares(20);
+
+            System.out.println("********************************");
+            Stock googleStock = new GoogleFactory().getStock();
+            googleStock.buyShares(30);
         } catch (Exception e) {
             e.printStackTrace();
         }

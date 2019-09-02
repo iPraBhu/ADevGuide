@@ -8,13 +8,13 @@ package com.adevguide.java.designpatterns.factorymethod;
  *
  */
 public abstract class Stock {
-    
-    public abstract void buyShares(int n);
-    public abstract void sellShares(int n);
-    //implemented method
-    public void exchangeInfo() {
+
+    public Stock() {
         System.out.println("You are making Transactions at NASDAQ");
     }
-    
+
+    public abstract void buyShares(int n);
+
+    public abstract void sellShares(int n);
 
 }
