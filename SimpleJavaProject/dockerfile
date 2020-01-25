@@ -1,25 +1,9 @@
-# our base build image
 FROM maven:3.5.4-jdk-8-alpine as maven
-
-# copy the project files
 COPY ./pom.xml ./pom.xml
-# copy your other files
 COPY ./src ./src
-
-# build all dependencies
 RUN mvn dependency:go-offline -B
-
-# build for release
 RUN mvn package
-
-# our final base image
 FROM openjdk:8u171-jre-alpine
-
-# set deployment directory
 WORKDIR /adevguide
-
-# copy over the built artifact from the maven image
-COPY --from=maven target/SimpleJavaProject-*.jar ./SimpleJavaProject.jar
-
-# set the startup command to run your binary
-CMD ["java", "-jar", "./SimpleJavaProject.jar"]
+COPY --from=maven target/SimpleJavaProject-*.jar ./adevguide/SimpleJavaProject.jar
+CMD ["java", "-jar", "./adevguide/SimpleJavaProject.jar"]
