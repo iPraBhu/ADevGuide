@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ReverseInteger",
+            "request": "launch",
+            "mainClass": "com.adevguide.java.problems.ReverseInteger",
+            "projectName": "SimpleJavaProject"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"
